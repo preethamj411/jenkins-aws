@@ -1,0 +1,6 @@
+"jenkins-accesskey" : {
+   "Type" : "AWS::IAM::AccessKey",
+   "Properties" : {
+      "UserName" : { "Ref" : "jenkins-user" }
+   }
+} 

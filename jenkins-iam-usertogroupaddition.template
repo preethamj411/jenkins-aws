@@ -1,0 +1,6 @@
+addUserToJenkinsGroup:
+  Type: AWS::IAM::UserToGroupAddition
+  Properties:
+    GroupName: jenkins-group
+    Users:
+    - !Ref jenkins-user
