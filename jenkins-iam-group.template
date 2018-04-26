@@ -1,17 +1,5 @@
-jenkins-group:
-  Type: AWS::IAM::Group
-  Properties:
-    Path: "/myapplication/"
-    Policies:
-    - PolicyName: myapppolicy
-      PolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-        - Effect: Allow
-          Action:
-          - sqs:*
-          Resource: !GetAtt myqueue.Arn
-        - Effect: Deny
-          Action:
-          - sqs:*
-          NotResource: !GetAtt myqueue.Arn
+Resources:
+  mygroup:
+    Type: AWS::IAM::Group
+    Properties:
+      GroupName: jenkinsgroup

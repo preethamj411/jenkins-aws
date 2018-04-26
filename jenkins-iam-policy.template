@@ -1,16 +1,17 @@
-jenkis-policy:
+Resources:
+ mypolicy:
   Type: AWS::IAM::Policy
   Properties:
-    PolicyName: jenkins-grouppolicy
+    PolicyName: jenkinsgrouppolicy
     PolicyDocument:
       Version: '2012-10-17'
       Statement:
       - Effect: Allow
         Action:
-        - s3:GetObject
-        - s3:PutObject
-        - s3:PutObjectAcl
-        Resource: arn:aws:s3:::myAWSBucket/*
+        - sqs:DeleteMessage
+        - sqs:GetQueueAttributes
+        - sqs:ReceiveMessage
+        - sqs:SendMessage
+        Resource: arn:aws:sqs:us-west-2:650546642981:my-queue
     Groups:
-    - myexistinggroup1
-    - !Ref mygroup
+    - jenkinsgroup

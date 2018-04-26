@@ -1,2 +1,5 @@
-jenkins-user:
-   Type : AWS::IAM::User
+Resources:
+  jenkins:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: Jenkins
